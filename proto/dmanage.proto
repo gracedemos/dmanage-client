@@ -1,0 +1,18 @@
+syntax = "proto3";
+package dmanage;
+
+service VMManage {
+  rpc UnmapGPU (VMManageRequest) returns (VMManageResponse);
+  rpc RemapGPU (VMManageRequest) returns (VMManageResponse);
+  rpc StartWin11 (VMManageRequest) returns (VMManageResponse);
+  rpc StopWin11 (VMManageRequest) returns (VMManageResponse);
+}
+
+message VMManageRequest {
+  uint32 id = 1;
+  string key = 2;
+}
+
+message VMManageResponse {
+  bool result = 1;
+}
